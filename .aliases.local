@@ -1,0 +1,7 @@
+# Find your external IP
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+#-- Git
+alias gss="git status -s"
+alias glo="git log --oneline --decorate --color"
+alias gls="git log --stat --color -p"
