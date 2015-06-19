@@ -1,5 +1,8 @@
-# Find your external IP
+#-- Utilities
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+#-- Ruby
+alias rk="rake"
 
 #-- Git
 alias gss="git status -s"
