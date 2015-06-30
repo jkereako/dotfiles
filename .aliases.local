@@ -6,7 +6,7 @@ alias rk="rake"
 
 #-- Git
 alias gca="git commit -a"
-alias gco='git checkout'
+alias gco="git checkout"
 alias glo="git log --oneline --decorate --color"
 alias gls="git log --stat --color -p"
 alias gss="git status -s"
