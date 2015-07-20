@@ -1,1 +1,2 @@
 Plug 'parkr/vim-jekyll'
+Plug 'bling/vim-airline'
