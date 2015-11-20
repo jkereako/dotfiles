@@ -2,3 +2,8 @@
 autoload -U promptinit
 promptinit
 prompt adam1
+
+# load pyenv if available
+if which pyenv &>/dev/null ; then
+  eval "$(pyenv init -)"
+fi
