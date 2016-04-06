@@ -1,0 +1,35 @@
+[alias]
+  gca = git commit -a
+  gco = git checkout
+  glo = git log --oneline --decorate --color
+  gls = git log --stat --color -p
+  gss = git status -s
+  a = add --all
+  ad = !git add -A && git diff --cached
+  ap = commit --amend -C HEAD
+  bd = !sh -c 'git branch -D $1 && git push origin :$1' -
+  c = commit -v -S
+  com = checkout master
+  contrib = !sh -c 'git log $1 --pretty=format:%an | sort | uniq' -
+  cp = cherry-pick
+  dic = diff --cached
+  ignore-date = rebase origin/master --ignore-date
+  mm = !git checkout master && git merge @{-1}
+  pending = !git fetch origin && git fetch production && git log --reverse production/master..origin/master
+  pr = !git push -u && hub pull-request
+  pristine = !git remote prune origin && git gc --aggressive && git reset --hard && git checkout master && git clean -dfx && git stash cle
+  ps = push
+  rbc = !git rebase --continue && git status
+  rbi = !git fetch origin && git rebase -i origin/master
+  ready = !git fetch origin && git rebase --interactive origin/master && git rebase origin/master --ignore-date && git push -f && git mm && git push
+  rebase-origin = !git fetch origin && git rebase origin/master
+  unwip = !test "`git log -n1 --pretty=format:%s`" = "wip" && git reset HEAD~1
+  wip = !git add -A && git commit -m "wip"
+# git change-commits GIT_COMMITTER_NAME "old name" "new name"
+  change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ $`echo $VAR` = \\\"$OLD\\\" ]]; then export $VAR=\\\"$NEW\\\"; fi\" $@; }; f"
+[commit]
+  gpgsign = true
+[user]
+  name = Jeff Kereakoglow
+  email = jkereako@users.noreply.github.com
+  signingkey = 
