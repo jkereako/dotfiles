@@ -3,10 +3,3 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 #-- Ruby
 alias rk="rake"
-
-#-- Git
-alias gca="git commit -a"
-alias gco="git checkout"
-alias glo="git log --oneline --decorate --color"
-alias gls="git log --stat --color -p"
-alias gss="git status -s"
