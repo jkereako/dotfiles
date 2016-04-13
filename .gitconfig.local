@@ -1,9 +1,9 @@
 [alias]
-  gca = git commit -a
-  gco = git checkout
-  glo = git log --oneline --decorate --color
-  gls = git log --stat --color -p
-  gss = git status -s
+  ca = commit -a
+  co = checkout
+  lo = log --oneline --decorate --color
+  ls = log --stat --color -p
+  ss = status -s
   a = add --all
   ad = !git add -A && git diff --cached
   ap = commit --amend -C HEAD
