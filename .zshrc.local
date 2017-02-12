@@ -1,9 +1,19 @@
-# Prompt
-autoload -U promptinit
-promptinit
-prompt adam1
-
-# load pyenv if available
+# pyenv
 if which pyenv &>/dev/null ; then
   eval "$(pyenv init -)"
 fi
+
+# Antigen
+source /usr/local/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme agnoster
+
+# Tell antigen that you're done.
+antigen apply
