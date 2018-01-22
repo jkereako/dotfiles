@@ -1,10 +1,31 @@
-# pyenv
+# Paths
+path=(~/bin $path)
+
+# export to sub-processes (make it inherited by child processes)
+export PATH
+
+# Initialize rbenv
+if which rbenv &>/dev/null ; then
+  eval "$(rbenv init -)"
+fi
+
+# Initialize pyenv
 if which pyenv &>/dev/null ; then
   eval "$(pyenv init -)"
 fi
 
+# Automatically upgrade brew packages
+if which brew &>/dev/null ; then
+  echo "Updating Homebrew packages..."
+  brew update
+  brew upgrade
+  brew cleanup
+fi
+
+SILENCE_RBENV_DEPRECATION=1
+
 # Antigen
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
