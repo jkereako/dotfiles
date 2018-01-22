@@ -19,7 +19,7 @@ if which brew &>/dev/null ; then
   echo "Updating Homebrew packages..."
   brew update
   brew upgrade
-  brew cleanup
+  brew cleanup && brew prune
 fi
 
 SILENCE_RBENV_DEPRECATION=1
