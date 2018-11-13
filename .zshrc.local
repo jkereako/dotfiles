@@ -1,8 +1,13 @@
 # Paths
+
+#path=('~/bin', '/Developer/MonoTouch/usr/bin' $path)
 path=(~/bin $path)
+path=(~/.fastlane/bin $path)
+path=(/Developer/MonoTouch/usr/bin $path)
 
 # export to sub-processes (make it inherited by child processes)
 export PATH
+
 
 # Initialize rbenv
 if which rbenv &>/dev/null ; then
@@ -12,14 +17,6 @@ fi
 # Initialize pyenv
 if which pyenv &>/dev/null ; then
   eval "$(pyenv init -)"
-fi
-
-# Automatically upgrade brew packages
-if which brew &>/dev/null ; then
-  echo "Updating Homebrew packages..."
-  brew update
-  brew upgrade
-  brew cleanup && brew prune
 fi
 
 SILENCE_RBENV_DEPRECATION=1
