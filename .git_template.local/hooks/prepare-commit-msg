@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Automatically prepends branch name to every commit message.
+#
+BRANCH=`git branch | grep '^\*' | cut -b3-`
+FILE=`cat "$1"`
+
+echo "$BRANCH: $FILE" > "$1"
