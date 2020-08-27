@@ -1,0 +1,22 @@
+#!/bin/bash -e
+#
+# CSV Viewer
+#
+# Prints a CSV file in the terminal
+
+# Print out error messages to STDERR.
+function err() {
+  echo -e "\033[0;31mERROR: $@\033[0m" >&2;
+  exit 1
+}
+
+#-- Main
+function main() {
+    if [ "$#" -ne 1 ]; then
+        err "Please provide a CSV file."
+    fi
+
+    sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t | less -#2 -N -S
+}
+
+main "$@"
